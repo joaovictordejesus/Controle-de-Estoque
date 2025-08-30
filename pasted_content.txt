@@ -1,0 +1,62 @@
+Faça em flutter, linguagem dart, um app de controle de estoque, com conexão do banco de dados firebase. O app deve ter Cadastro de Produtos, Atualização de produtos, Exclusão de produtos, Entrada de estoque, saída de estoque, consulta de produtos e histórico de movimentação. Deixe tudo bem documentado.
+                                                                                                                                                                                                                              O código deve conter tais informações também                                                                                                                                 mport 'packagefluttermaterial.dart';
+import 'packagefirebase_corefirebase_core.dart';
+import 'firebase_options.dart';  este é gerado pelo comando flutterfire configure
+ void main() async {
+  WidgetsFlutterBinding.ensureInitialized();  garante que os bindings do Flutter sejam inicializados
+  await Firebase.initializeApp(
+    options DefaultFirebaseOptions.currentPlatform,  pega as configs corretas (AndroidiOSWeb)
+  );
+  runApp(const MyApp());
+}
+
+ class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner false,
+      title 'Firebase Demo',
+      theme ThemeData(primarySwatch Colors.blue),
+      home const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar AppBar(title const Text(Firebase conectado)),
+      body const Center(
+        child Text(✅ Firebase inicializado com sucesso!),
+      ),
+    );
+  }
+}                                                                                                                                                                                                                          Não se esqueça de já linkar ao firebase de uma vez e também gerar o apk no final.                  
+SDK do Firebase para você já colocar no código:
+ // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyD3jR71dEWvb-f_at37EVFKAAKJi876rm0",
+  authDomain: "controle-estoque-1b8c4.firebaseapp.com",
+  databaseURL: "https://controle-estoque-1b8c4-default-rtdb.firebaseio.com",
+  projectId: "controle-estoque-1b8c4",
+  storageBucket: "controle-estoque-1b8c4.firebasestorage.app",
+  messagingSenderId: "228138986569",
+  appId: "1:228138986569:web:271675fcdb0140cf212398",
+  measurementId: "G-K7DLBQ8DPN"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);

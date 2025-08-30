@@ -297,5 +297,6 @@ O APK será gerado em: `build/app/outputs/flutter-apk/`
 
 **Desenvolvido com Flutter e Firebase**  
 **Versão**: 1.0.0  
-**Data**: Agosto 2025
+**Data de Entrega**: Agosto 2025
 
+Joâo Victor de Jesus Augusto
